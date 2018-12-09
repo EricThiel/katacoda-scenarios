@@ -7,6 +7,14 @@
     "steps": [{
       "title": "Step 1 - Run Command",
       "text": "step1.md"
+    },
+    {
+      "title": "Step 2 - Run Command",
+      "text": "step2.md"
+    },
+    {
+      "title": "Step 3 - Run Command",
+      "text": "step3.md"
     }],
     "intro": {
       "text": "intro.md",
