@@ -19,5 +19,26 @@ Open a connection to IOS_XE_1 using the manager object.
 Review the capabilities of the device by looping over the `server_capabilities` property of the manager object. 
 
 `for capability in m.server_capabilities:
-    print(capability)`{{execute}}
+    print(capability)
+`{{execute}}
 
+What is printed is a line per capability. Each line includes several pieces of data including the Model URI, Model Name, Model Version, and other details. Below we've grabbed two capabilities and formatted the output to better inspect. 
+
+```urn:ietf:params:xml:ns:yang:ietf-interfaces
+  ? module=ietf-interfaces
+  & revision=2014-05-08
+  & features=pre-provisioning,if-mib,arbitrary-names
+  & deviations=ietf-ip-devs
+.
+http://cisco.com/ns/ietf-ip/devs
+  ? module=ietf-ip-devs
+  & revision=2016-08-10
+```
+
+Now close the connection to the device to end the NETCONF session. 
+
+`m.close_session()`{{execute}}
+
+Exit the Python interpreter.
+
+`exit()`{{execute}}

@@ -11,4 +11,4 @@ The device we will be working with is represented by the constant env_lab.IOS_XE
 `print(env_lab.IOS_XE_1)`{{execute}}
 
 If successful, you should see output similar to:
-`{'username': 'root', 'restconf_port': 9443, 'ssh_port': 8181, 'netconf_port': 10000, 'host': 'ios-xe-mgmt.cisco.com', 'password': 'D_Vay!_10&'}`
+`{'username': 'cisco', 'restconf_port': 9443, 'ssh_port': 5001, 'netconf_port': 5011, 'host': '173.37.56.91', 'password': 'C1sco12345'}`
