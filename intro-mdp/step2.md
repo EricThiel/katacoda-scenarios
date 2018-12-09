@@ -8,4 +8,4 @@ Next let's launch our dev container with all of our tools we will need.
 
 And change into the code folder. 
 
-`cd intro-mdp/netconf/`{{execute}}
+`cd /mycode/intro-mdp/netconf/`{{execute}}
