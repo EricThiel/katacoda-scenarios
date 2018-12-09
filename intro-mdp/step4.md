@@ -18,7 +18,8 @@ Open a connection to IOS_XE_1 using the manager object.
 
 Review the capabilities of the device by looping over the `server_capabilities` property of the manager object. 
 
-```for capability in m.server_capabilities:
+```
+for capability in m.server_capabilities:
     print(capability)
 
 ```{{execute}}
