@@ -131,7 +131,7 @@ netconf_data = netconf_interface_template.format(
 
 6. Close the script and run it from the terminal. Provide the inputs for the new interface when asked. 
 
-`python add_loopback.py`
+`python add_loopback.py`{{execute}}
 
 
 ## Hands On: Deleting from the configuration
@@ -141,6 +141,58 @@ Now you've added a Loopback, but what if you want to remove it from the configur
 1. Open the file delete_loopback.py in a text editor. Let's walk through the new parts to observe. 
 
 2. Once again we have an XML payload template, but notice this time the operation="delete" on the <interface> leaf. This is how you specify the specific activity to take on an object. 
+
+```XML
+netconf_interface_template = """
+<config>
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface operation="delete">
+            <name>{name}</name>
+        </interface>
+    </interfaces>
+</config>"""
+```
+
+3. That's it... not much different from adding.
+
+4. Close the script and run it from the terminal. Provide the number of the Loopback you added in the last step. 
+
+` python delete_loopback.py`
+
+* Note: if you try to delete an interface that doesn't exist, you will get a NETCONF error. Give it a try!
+
+
+## Hands On: Saving the configuration
+
+After you've made network configuration changes, you may want to save them to the startup configuration. NETCONF supports the ability for vendors to create native RPC operations for activities that are specific to their platform. IOS XE devices support a <save-config> operation as part of one of the native data models. Let's see how it works! 
+
+1. Open the file save_config.py in a text editor. Let's walk through the new parts to observe. 
+
+2. To craft a custom RPC, we'll be leveraging another object from the ncclient package. Here we import xml_.
+
+` from ncclient import manager, xml_`
+
+3. Rather than creating a NETCONF <filter> or <config>, this time we are explicitly calling the RPC from a model. 
+
+```XML
+ save_body = """
+ <cisco-ia:save-config xmlns:cisco-ia="http://cisco.com/yang/cisco-ia"/>
+ """
+```
+
+4. As we are sending a custom RPC, we use the dispatch method to send the custom operation. 
+
+` netconf_reply = m.dispatch(xml_.to_ele(save_body))`
+
+5. Okay, close the script and run it from the terminal. Look at the body of the reply returned. You should see a clear indication of success. 
+
+` python save_config.py`
+
+```XML
+ # Partial Example Output
+ <result xmlns="http://cisco.com/yang/cisco-ia">Save running-config successful</result>
+```
+
 
 
 
