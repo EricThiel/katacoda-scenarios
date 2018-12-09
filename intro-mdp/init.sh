@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get update
 apt-get install -y python3-venv
 git clone https://github.com/securenetwrk/katacoda-mdp.git
 python3 -m venv venv
