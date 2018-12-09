@@ -1,8 +1,8 @@
 #!/bin/bash
-apt-get update
-apt-get install -y python3-venv libffi-dev python-openssl
+#apt-get update
+#apt-get install -y python3-venv libffi-dev python-openssl
 git clone https://github.com/securenetwrk/katacoda-mdp.git
-python3 -m venv venv
-source venv/bin/activate
+#python3 -m venv venv
+#source venv/bin/activate
 cd katacoda-mdp/intro-mdp
-pip3 install -r requirements.txt
+pip install -r requirements.txt

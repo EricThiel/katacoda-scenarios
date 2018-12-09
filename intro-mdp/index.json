@@ -23,6 +23,7 @@
       "text": "step5.md"
     }],
     "intro": {
+      "courseData": "initpod.sh",
       "text": "intro.md",
       "credits": ""
     },
