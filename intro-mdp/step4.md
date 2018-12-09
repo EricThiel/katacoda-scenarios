@@ -1,4 +1,3 @@
-This is your fourth step.
 
 ## Your Mission, Should you Choose to Accept it!
 
@@ -37,12 +36,10 @@ response = requests.MISSION(url)
 1. Only replace instances of MISSION within the code. Be careful not to replace characters before or after it.
 1. You need to have created the env_user.py file based on the template to enable posting to Cisco Webex Teams, formerly Cisco Spark. If you haven't created this file, you will get errors unrelated to the Mission activities.
 
-Need a Hint... Click to See!
-
 <details>
 <summary>Need a Hint... Click to See!</summary>
 
-* test
+* Look back at the exercises and code from the NETCONF lab for examples
 
 </details>
 

@@ -1,6 +1,5 @@
-Walking through automating your network with NETCONF
 
-## Task
+## Walking through automating your network with NETCONF
 
 1. Open the file `katacoda-mdp/intro-mdp/netconf/get_interface_list.py` in a text editor. Let's walk through the key parts to observe. 
 

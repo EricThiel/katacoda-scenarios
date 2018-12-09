@@ -1,6 +1,5 @@
-Python says <hello> with ncclient
 
-## Task
+## Python says <hello> with ncclient
 
 Open an interactive Python interpreter and run the prep.py file. This file will import in the details about the different lab infrastructure that will be used for this lab. 
 

@@ -1,6 +1,5 @@
-Seting up your environment
 
-## Task
+## Seting up your environment
 
 Let's start by cloning our code repo.
 
