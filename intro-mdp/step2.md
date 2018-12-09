@@ -1,58 +1,69 @@
 
-## Step 2: Python says <hello> with ncclient
+## Step 2: Exploring YANG Models with pyang
 
-Open an interactive Python interpreter and run the prep.py file. This file will import in the details about the different lab infrastructure that will be used for this lab. 
+An important aspect of developing with new languages and APIs, is having access to tools and utilities that make the job easier. One very helpful tool for working with YANG data models is pyang, a YANG validator, converter, and code generator written in Python. You will use this tool to look at a few basic YANG Models.
 
-`python -i prep.py`{{execute}}
+1. Change into the directory for this lab. 
 
-The device we will be working with is represented by the constant env_lab.IOS_XE_1. 
+`cd /home/scrapbook/tutorial/katacoda-mdp/intro-mdp/yang`{{execute}}
 
-`print(env_lab.IOS_XE_1)`{{execute}}
+2. Within the directory is a folder called models that contain several YANG Models from the IETF, OpenConfig and Cisco. 
 
-If successful, you should see output similar to:
-`{'username': 'cisco', 'restconf_port': 9443, 'ssh_port': 5001, 'netconf_port': 5011, 'host': '173.37.56.91', 'password': 'C1sco12345'}`
+`ls models`{{execute}}
 
-Import in the manager object from ncclient. 
+3. Change into the models directory.
 
-`from ncclient import manager`{{execute}}
+`cd models`{{execute}}
 
-Open a connection to IOS_XE_1 using the manager object. 
+4. One of the models is ietf-interfaces.yang. This is a model provided by the IETF that models a standard network interface. Open the file in a text editor to view the model in it's native YANG language. Notice how native YANG model definitions are very long and descriptive (as you'd expect and want). As a consumer of YANG models, working in the native YANG is thankfully unnecessary.
 
-`m = manager.connect(
-    host=env_lab.IOS_XE_1["host"],
-    port=env_lab.IOS_XE_1["netconf_port"],
-    username=env_lab.IOS_XE_1["username"],
-    password=env_lab.IOS_XE_1["password"],
-    hostkey_verify=False
-    )`{{execute}}
+5. The pyang module can generate much simpler to understand representations of a YANG model. Run the following command to generate a clear-text tree view of the model.
 
-Review the capabilities of the device by looping over the `server_capabilities` property of the manager object. 
+`pyang -f tree ietf-interfaces.yang`{{execute}}
 
+6. Some things to notice about the output
+  * The "module" ietf-interfaces provides two "containers":
+    * interfaces
+    * interfaces-state
+  * Within each "container" is a "list" called "interface"
+    * A single instance of an interface is identified by a unique "key" of [name]
+  * Every "leaf" attribute (ex name, description, type, etc.) has the following details:
+    * Either read-write (rw) or read-only (ro)
+    * Some are optional (?)
+    * Explicitly-defined data types
+    
+7. Included in the models\ directory is the OpenConfig YANG model for "interfaces". Take a look at it and compare what you see to the IETF version. 
+
+`pyang -f tree openconfig-interfaces.yang`{{execute}}
+
+8. Open `/home/scrapbook/tutorial/katacoda-mdp/intro-mdp/yang/example-ietf-interfaces-data.xml` in the text editor. This file is an example of data returned from a network device representing the interfaces modeled using the ietf-interfaces.yang model that you just explored. A partial output of the file is shown here. 
+
+```XML
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+        <name>GigabitEthernet2</name>
+        <description>WAN Interface</description>
+        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+        <enabled>true</enabled>
+        <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+            <address>
+                <ip>172.16.12.1</ip>
+                <netmask>255.255.255.0</netmask>
+            </address>
+        </ipv4>
+        <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
+    </interface>
+</interfaces>
 ```
-for capability in m.server_capabilities:
-    print(capability)
 
+9. You should recognize the YANG model elements represented:
+  * container interfaces
+    * <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">...</interfaces>
+    * The attribute xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces" identifies the particular YANG model
+  * list of individual interfaces
+    * <interface>..</interface>
+  * leaf attributes
+    * <name>..</name>
+    * <type>..</type>
+    * <enabled>..</enabled
 
-```{{execute}}
-
-What is printed is a line per capability. Each line includes several pieces of data including the Model URI, Model Name, Model Version, and other details. Below we've grabbed two capabilities and formatted the output to better inspect. 
-
-```
-urn:ietf:params:xml:ns:yang:ietf-interfaces
-  ? module=ietf-interfaces
-  & revision=2014-05-08
-  & features=pre-provisioning,if-mib,arbitrary-names
-  & deviations=ietf-ip-devs
-.
-http://cisco.com/ns/ietf-ip/devs
-  ? module=ietf-ip-devs
-  & revision=2016-08-10
-```
-
-Now close the connection to the device to end the NETCONF session. 
-
-`m.close_session()`{{execute}}
-
-Exit the Python interpreter.
-
-`exit()`{{execute}}

@@ -7,23 +7,24 @@
     "steps": [{
       "title": "Step 1 - Seting up your environment",
       "text": "step1.md"
-    },
-    {
-      "title": "Step 2 - Python says <hello> with ncclient",
+    },{
+      "title": "Step 2 - Exploring YANG Models with pyang",
       "text": "step2.md"
-    },
-    {
-      "title": "Step 3 - Walking through automating your network with NETCONF",
+    },{
+      "title": "Step 3 - Python says <hello> with ncclient",
       "text": "step3.md"
     },{
-      "title": "Step 4 - Using Postman with RESTCONF",
+      "title": "Step 4 - Walking through automating your network with NETCONF",
       "text": "step4.md"
     },{
-      "title": "Step 5 - Your Mission, Should you Choose to Accept it",
+      "title": "Step 5 - Using Postman with RESTCONF",
       "text": "step5.md"
     },{
-      "title": "Step 6 - Verifying the Solution",
+      "title": "Step 6 - Your Mission, Should you Choose to Accept it",
       "text": "step6.md"
+    },{
+      "title": "Step 7 - Verifying the Solution",
+      "text": "step7.md"
     }],
     "intro": {
       "text": "intro.md",
