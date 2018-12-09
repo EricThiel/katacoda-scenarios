@@ -25,7 +25,8 @@ Review the capabilities of the device by looping over the `server_capabilities` 
 
 What is printed is a line per capability. Each line includes several pieces of data including the Model URI, Model Name, Model Version, and other details. Below we've grabbed two capabilities and formatted the output to better inspect. 
 
-```urn:ietf:params:xml:ns:yang:ietf-interfaces
+```
+urn:ietf:params:xml:ns:yang:ietf-interfaces
   ? module=ietf-interfaces
   & revision=2014-05-08
   & features=pre-provisioning,if-mib,arbitrary-names

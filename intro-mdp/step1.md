@@ -2,6 +2,11 @@ This is your first step.
 
 ## Task
 
-Let's start by loading our dev container with all of our tools we will need. 
+Let's start by downloading our code repo.
 
-`docker run -it --rm --privileged -v $(pwd):/mycode securenetwrk/dnebase3`{{execute}}
+`git clone https://github.com/securenetwrk/katacoda-mdp.git`{{execute}}
+
+And change into the code directory. 
+
+`cd katacoda-mdp`{{execute}}
+
