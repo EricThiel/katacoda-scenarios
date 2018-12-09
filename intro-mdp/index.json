@@ -6,7 +6,6 @@
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
-      "courseData": "initpod.sh",
       "text": "step1.md"
     },
     {
@@ -36,6 +35,6 @@
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "python-nltk"
   }
 }
