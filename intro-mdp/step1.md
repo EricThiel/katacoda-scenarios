@@ -1,5 +1,5 @@
 
-## Seting up your environment
+## Step 1: Seting up your environment
 
 Let's start by cloning our code repo.
 

@@ -5,22 +5,25 @@
   "time": "20 minutes",
   "details": {
     "steps": [{
-      "title": "Step 1 - Run Command",
+      "title": "Step 1 - Seting up your environment",
       "text": "step1.md"
     },
     {
-      "title": "Step 2 - Run Command",
+      "title": "Step 2 - Python says <hello> with ncclient",
       "text": "step2.md"
     },
     {
-      "title": "Step 3 - Run Command",
+      "title": "Step 3 - Walking through automating your network with NETCONF",
       "text": "step3.md"
     },{
-      "title": "Step 4 - Run Command",
+      "title": "Step 4 - Using Postman with RESTCONF",
       "text": "step4.md"
     },{
-      "title": "Step 5 - Run Command",
+      "title": "Step 5 - Your Mission, Should you Choose to Accept it",
       "text": "step5.md"
+    },{
+      "title": "Step 6 - Verifying the Solution",
+      "text": "step6.md"
     }],
     "intro": {
       "text": "intro.md",
