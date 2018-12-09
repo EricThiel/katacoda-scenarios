@@ -4,7 +4,7 @@ This is your second step.
 
 Next, let's load our code repo.
 
-`https://github.com/securenetwrk/katacoda-mdp.git`{{execute}}
+`git clone https://github.com/securenetwrk/katacoda-mdp.git`{{execute}}
 
 And change into the code directory for this lab. 
 
