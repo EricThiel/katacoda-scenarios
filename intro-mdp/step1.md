@@ -2,11 +2,11 @@ This is your first step.
 
 ## Task
 
-Let's start by loading our virtual environment.
+Let's start by cloning our code repo.
 
-`source venv/bin/activate`{{execute}}
+`git clone https://github.com/securenetwrk/katacoda-mdp.git`{{execute}}
 
 And change into the code directory. 
 
-`cd katacoda-mdp`{{execute}}
+`cd /home/scrapbook/tutorial/katacoda-mdp/intro-mdp`{{execute}}
 
