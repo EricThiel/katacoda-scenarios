@@ -2,6 +2,6 @@ This is your first step.
 
 ## Task
 
-This is an _example_ of creating a scenario and running a **command**
+Let's start by loading our dev container with all of our tools we will need. 
 
-`echo 'Hello World'`{{execute}}
+`docker run -it --rm --privileged -v $(pwd):/mycode securenetwrk/dnebase3'`{{execute}}
