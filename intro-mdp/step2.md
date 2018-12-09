@@ -2,10 +2,6 @@ This is your second step.
 
 ## Task
 
-Next let's launch our dev container with all of our tools we will need. 
+Next let's change into the code folder. 
 
-`docker run -it --rm --privileged -v $(pwd):/mycode securenetwrk/dnebase3`{{execute}}
-
-And change into the code folder. 
-
-`cd /mycode/intro-mdp/netconf/`{{execute}}
+`cd /root/katacoda-mdp/intro-mdp/netconf/`{{execute}}

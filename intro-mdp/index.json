@@ -6,6 +6,7 @@
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
+      "courseData": "initpod.sh",
       "text": "step1.md"
     },
     {
@@ -23,7 +24,6 @@
       "text": "step5.md"
     }],
     "intro": {
-      "courseData": "initpod.sh",
       "text": "intro.md",
       "credits": ""
     },
