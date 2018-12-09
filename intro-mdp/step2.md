@@ -58,12 +58,12 @@ An important aspect of developing with new languages and APIs, is having access 
 
 9. You should recognize the YANG model elements represented:
   * container interfaces
-    * <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">...</interfaces>
+    * `<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">...</interfaces>`
     * The attribute xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces" identifies the particular YANG model
   * list of individual interfaces
-    * <interface>..</interface>
+    * `<interface>..</interface>`
   * leaf attributes
-    * <name>..</name>
-    * <type>..</type>
-    * <enabled>..</enabled
+    * `<name>..</name>`
+    * `<type>..</type>`
+    * `<enabled>..</enabled>`
 
