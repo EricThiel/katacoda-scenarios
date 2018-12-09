@@ -157,7 +157,7 @@ netconf_interface_template = """
 
 4. Close the script and run it from the terminal. Provide the number of the Loopback you added in the last step. 
 
-` python delete_loopback.py`
+` python delete_loopback.py`{{execute}}
 
 * Note: if you try to delete an interface that doesn't exist, you will get a NETCONF error. Give it a try!
 
@@ -186,7 +186,7 @@ After you've made network configuration changes, you may want to save them to th
 
 5. Okay, close the script and run it from the terminal. Look at the body of the reply returned. You should see a clear indication of success. 
 
-` python save_config.py`
+` python save_config.py`{{execute}}
 
 ```XML
  # Partial Example Output
