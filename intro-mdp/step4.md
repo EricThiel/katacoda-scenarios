@@ -21,7 +21,6 @@ Review the capabilities of the device by looping over the `server_capabilities` 
 ```for capability in m.server_capabilities:
     print(capability)
 
-
 ```{{execute}}
 
 What is printed is a line per capability. Each line includes several pieces of data including the Model URI, Model Name, Model Version, and other details. Below we've grabbed two capabilities and formatted the output to better inspect. 
